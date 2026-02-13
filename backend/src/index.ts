@@ -1,10 +1,13 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
+import manifestacijaRoutes from './routes/manifestacija.routes.js';
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+app.use('/api/manifestacija', manifestacijaRoutes);
 
 app.get("/api/health", (req: Request, res: Response) => {
   res.json({ status: "ok", message: "Art 2026 backend radi" });
