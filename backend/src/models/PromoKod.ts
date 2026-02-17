@@ -1,4 +1,4 @@
-export type StatusPromoKoda = "NEISKORIŠĆEN" | "ISKORIŠĆEN" | "NEVAŽEĆI";
+export type StatusPromoKoda = "NEISKORISCEN" | "ISKORISCEN" | "NEVAZECI";
 
 export interface PromoKod {
     KodID: number;

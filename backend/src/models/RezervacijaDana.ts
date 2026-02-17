@@ -1,4 +1,4 @@
-export type StatusRezervacije = "POTVRĐENO" | "OTKAZANO";
+export type StatusRezervacije = "POTVRDJENO" | "OTKAZANO";
 
 export interface RezervacijaDana {
     DanID: number;

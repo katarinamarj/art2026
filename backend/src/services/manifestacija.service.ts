@@ -28,7 +28,7 @@ class ManifestacijaService {
             LEFT JOIN RezervacijaDana r 
                 ON d.DanID = r.DanID 
                 AND d.ManifestacijaID = r.ManifestacijaID
-                AND r.StatusRezervacije = 'POTVRĐENO'
+                AND r.StatusRezervacije = 'POTVRDJENO'
             WHERE d.ManifestacijaID = ?
             GROUP BY d.DanID, d.ManifestacijaID`,
             [manifestacijaId]
