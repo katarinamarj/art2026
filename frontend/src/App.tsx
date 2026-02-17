@@ -1,21 +1,16 @@
-import { useEffect, useState } from "react";
-
-type Health = { status: string; message: string };
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import ManifestacijaPage from "./pages/ManifestacijaPage";
 
 export default function App() {
-  const [data, setData] = useState<Health | null>(null);
-
-  useEffect(() => {
-    fetch("/api/health")
-      .then((r) => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
 
   return (
-    <div>
-      <h1>Art 2026</h1>
-      <pre>{data ? JSON.stringify(data, null, 2) : "Loading..."}</pre>
-    </div>
+     <BrowserRouter>
+      <Routes>
+
+        <Route path="/" element={<Navigate to="/manifestacija/1" />} />
+        <Route path="/manifestacija/:id" element={<ManifestacijaPage />} />
+        
+      </Routes>
+    </BrowserRouter>
   );
 }
