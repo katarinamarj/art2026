@@ -3,8 +3,8 @@ export interface Manifestacija {
     Naziv: string;
     Grad?: string;
     Lokacija?: string;
-    DatumOd?: Date;
-    DatumDo?: Date;
+    DatumOd?: string | null;
+    DatumDo?: string | null;
     DodatneInformacije?: string;
-    RokRanePrijave?: Date;
+    RokRanePrijave?: string | null;
 }

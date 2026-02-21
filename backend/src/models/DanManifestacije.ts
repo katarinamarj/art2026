@@ -4,7 +4,7 @@ export interface DanManifestacije {
     DanID: number;
     ManifestacijaID: number;
     TipDana: TipDana;
-    Datum?: Date;
+    Datum?: string | null;
     MaxBrojPosetilaca: number;
     OsnovnaCena: number;
 }
