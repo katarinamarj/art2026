@@ -3,10 +3,12 @@ import { useParams } from "react-router-dom";
 import type { Manifestacija } from "../models/manifestacija.model";
 import "../styles/ManifestacijaPage.css";
 import { formatDate, formatDateRange, formatTime } from "../utils/dateUtils";
+import { useNavigate } from "react-router-dom";
 
 export default function ManifestacijaPage() {
   const [data, setData] = useState<Manifestacija | null>(null);
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`/api/manifestacija/${id}`)
@@ -56,7 +58,9 @@ export default function ManifestacijaPage() {
       </div>
 
       <div className="dodatneInfo">{data.DodatneInformacije}</div>
-      <button className="prijava-btn"> &gt;&gt; Prijavi se </button>
+      <button className="prijava-btn" onClick={() => navigate(`/prijava/${id}`)}>
+        &gt;&gt; Prijavi se
+      </button>
     </div>
   );
 }
