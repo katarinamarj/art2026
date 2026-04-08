@@ -1,0 +1,80 @@
+.otkazivanje-container {
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 40px 20px;
+  color: #f5f5f5;
+}
+
+.otkazivanje-title {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.otkazivanje-form {
+  display: grid;
+  gap: 24px;
+}
+
+.otkazivanje-section {
+  background: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 16px;
+  padding: 20px;
+  transition: 0.3s ease;
+}
+
+.otkazivanje-section:hover {
+  border-color: #666;
+}
+
+.otkazivanje-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.otkazivanje-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.otkazivanje-field label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.otkazivanje-field input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #444;
+  background-color: #121212;
+  color: white;
+  transition: 0.2s ease;
+}
+
+.otkazivanje-error {
+  padding: 12px;
+  background-color: #2a1212;
+  border-radius: 10px;
+}
+
+.otkazivanje-success {
+  background: #1e1e1e;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.otkazivanje-btn {
+  padding: 10px 15px;
+  border-radius: 14px;
+  cursor: pointer;
+  color: white;
+  background-color: #8b1c1c;
+  width: 20%;
+  margin: 0 auto; 
+  margin-bottom: 20px;
+}
+
