@@ -46,14 +46,12 @@ class OtkazivanjeService {
         throw this.httpError(409, "Prijava je vec otkazana.");
       }
 
-      // 2) Deaktiviraj token trajno
       await conn.query<ResultSetHeader>(
         `UPDATE Prijava SET StatusTokena = 'PASIVAN' WHERE PrijavaID = ?`,
         [prijavaId]
       );
 
-      // 3) Otkazi rezervacije dana (mesta se oslobadjaju jer ti zauzece racunas samo za POTVRDJENO)
-      //    Ako ti ENUM nema 'OTKAZANO', promeni ovu vrednost u onu koju imas.
+      
       await conn.query<ResultSetHeader>(
         `
         UPDATE RezervacijaDana
@@ -63,8 +61,7 @@ class OtkazivanjeService {
         [prijavaId]
       );
 
-      // 4) Promo kod otkazane prijave postaje nevazeci (kod koji je TA prijava generisala)
-      //    Ako ti ENUM nema 'NEVAZECI', promeni vrednost.
+
       await conn.query<ResultSetHeader>(
         `
         UPDATE PromoKod
