@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import type { Manifestacija } from "../models/manifestacija.model";
 import "../styles/ManifestacijaPage.css";
 import { formatDate, formatDateRange, formatTime } from "../utils/dateUtils";
@@ -61,6 +61,10 @@ export default function ManifestacijaPage() {
       <button className="prijava-btn" onClick={() => navigate(`/prijava/${id}`)}>
         &gt;&gt; Prijavi se
       </button>
+      <div className="otkazivanje">
+        Ukoliko želite da otkažete rezervaciju, kliknite {" "}
+        <Link to="/otkazivanje">ovde</Link>.
+      </div>
     </div>
   );
 }

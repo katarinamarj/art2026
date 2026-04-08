@@ -199,7 +199,7 @@ export default function PrijavaPage() {
             <Input label="Mesto" value={mesto} onChange={setMesto} />
             <Input label="Država" value={drzava} onChange={setDrzava} />
             <Input label="Email" value={email} onChange={setEmail} />
-            <Input label="Potvrda email" value={potvrdaEmail} onChange={setPotvrdaEmail} />
+            <Input label="Potvrdi email" value={potvrdaEmail} onChange={setPotvrdaEmail} />
           </div>
         </div>
 
