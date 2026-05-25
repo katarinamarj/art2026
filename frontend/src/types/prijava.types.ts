@@ -35,5 +35,6 @@ export interface KreirajPrijavuResponse {
   popustNaPaket: number;
   popustNaGrupu: number;
   popustPromoKod: number;
+  popustRanePrijave: number;
   rezervacije: RezervacijaResponse[];
 }

@@ -9,7 +9,7 @@ export default function OtkazivanjePage() {
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     setError(null);
@@ -35,39 +35,37 @@ export default function OtkazivanjePage() {
 
   return (
     <div className="otkazivanje-container">
-  <h1 className="otkazivanje-title">OTKAZIVANJE PRIJAVE</h1>
+      <h1 className="otkazivanje-title">OTKAZIVANJE PRIJAVE</h1>
 
-  <form className="otkazivanje-form" onSubmit={handleSubmit}>
-    <div className="otkazivanje-section">
-      <div className="otkazivanje-grid">
-        
-        <div className="otkazivanje-field">
-          <label>Email</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
+        <form className="otkazivanje-form" onSubmit={onSubmit}>
+          <div className="otkazivanje-section">
+            <div className="otkazivanje-grid">
+              <div className="otkazivanje-field">
+                <label>Email</label>
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+              </div>
 
-        <div className="otkazivanje-field">
-          <label>Token prijave</label>
-          <input
-            type="text"
-            value={token}
-            onChange={(e) => setToken(e.target.value)}
-          />
-        </div>
+              <div className="otkazivanje-field">
+                <label>Token prijave</label>
+                <input
+                  type="text"
+                  value={token}
+                  onChange={(e) => setToken(e.target.value)}
+                />
+              </div>
+            </div>
+          </div>
 
-      </div>
+          <button className="otkazivanje-btn" type="submit">
+            Otkaži prijavu
+          </button>
+      </form>
+      {error && <div className="otkazivanje-error">{error}</div>}
+      {success && <div className="otkazivanje-success">{success}</div>}
     </div>
-
-    <button className="otkazivanje-btn" type="submit">
-      Otkaži prijavu
-    </button>
-  </form>
-   {error && <div className="otkazivanje-error">{error}</div>}
-  {success && <div className="otkazivanje-success">{success}</div>}
-</div>
   );
 }

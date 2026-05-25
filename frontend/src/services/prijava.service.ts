@@ -1,7 +1,4 @@
-import type {
-  KreirajPrijavuRequest,
-  KreirajPrijavuResponse,
-} from "../types/prijava.types";
+import type { KreirajPrijavuRequest, KreirajPrijavuResponse } from "../types/prijava.types";
 
 export async function createPrijava(
   payload: KreirajPrijavuRequest

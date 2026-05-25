@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "../styles/PrijavaPage.css";
 import type { KreirajPrijavuRequest, KreirajPrijavuResponse,TipDana } from "../types/prijava.types";
@@ -27,8 +27,7 @@ export default function PrijavaPage() {
 
   const [, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [success, setSuccess] =
-    useState<KreirajPrijavuResponse | null>(null);
+  const [success, setSuccess] = useState<KreirajPrijavuResponse | null>(null);
 
   const toggleDan = (dan: TipDana) => {
     setDani((prev) =>
@@ -36,40 +35,22 @@ export default function PrijavaPage() {
     );
   };
 
-  const payload: KreirajPrijavuRequest = useMemo(
-    () => ({
-      manifestacijaId,
-      ime,
-      prezime,
-      profesija: profesija.trim() ? profesija : undefined,
-      adresa1,
-      adresa2: adresa2.trim() ? adresa2 : undefined,
-      postanskiBroj,
-      mesto,
-      drzava,
-      email,
-      potvrdaEmail,
-      dani,
-      brojOsoba,
-      promoKod: promoKod.trim() ? promoKod : undefined,
-    }),
-    [
-      manifestacijaId,
-      ime,
-      prezime,
-      profesija,
-      adresa1,
-      adresa2,
-      postanskiBroj,
-      mesto,
-      drzava,
-      email,
-      potvrdaEmail,
-      dani,
-      brojOsoba,
-      promoKod,
-    ]
-  );
+  const payload: KreirajPrijavuRequest = {
+    manifestacijaId,
+    ime,
+    prezime,
+    profesija: profesija.trim() ? profesija : undefined,
+    adresa1,
+    adresa2: adresa2.trim() ? adresa2 : undefined,
+    postanskiBroj,
+    mesto,
+    drzava,
+    email,
+    potvrdaEmail,
+    dani,
+    brojOsoba,
+    promoKod: promoKod.trim() ? promoKod : undefined,
+  };
 
   const validate = () => {
     if (!ime.trim()) return "Niste uneli ime.";
@@ -98,9 +79,9 @@ export default function PrijavaPage() {
     setError(null);
     setSuccess(null);
 
-    const msg = validate();
-    if (msg) {
-      setError(msg);
+    const m = validate();
+    if (m) {
+      setError(m);
       return;
     }
 
@@ -123,7 +104,12 @@ export default function PrijavaPage() {
         <div className="success-box">
           <p><b>Token:</b> {success.token}</p>
           <p><b>Promo kod:</b> {success.generisaniPromoKod}</p>
+          <p><b>Popust na grupu:</b> {success.popustNaGrupu ? `${success.popustNaGrupu}%` : "/"}</p>
+          <p><b>Popust na paket:</b> {success.popustNaPaket ? `${success.popustNaPaket}%` : "/"}</p>
+          <p><b>Popust promo koda:</b> {success.popustPromoKod ? `${success.popustPromoKod}%` : "/"}</p>
+          <p><b>Popust rane prijave:</b> {success.popustRanePrijave ? `${success.popustRanePrijave}%` : "/"}</p>
           <p><b>Ukupna cena:</b> {success.ukupnoDugovanje.toFixed(2)} RSD</p>
+          <p className="mes">Sačuvajte token kako biste mogli da izmenite ili otkažete rezervaciju!</p>
         </div>
 
         <button className="btn" onClick={() => navigate("/")}>
