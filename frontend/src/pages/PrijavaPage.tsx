@@ -107,7 +107,7 @@ export default function PrijavaPage() {
           <p><b>Popust na grupu:</b> {success.popustNaGrupu ? `${success.popustNaGrupu}%` : "/"}</p>
           <p><b>Popust na paket:</b> {success.popustNaPaket ? `${success.popustNaPaket}%` : "/"}</p>
           <p><b>Popust promo koda:</b> {success.popustPromoKod ? `${success.popustPromoKod}%` : "/"}</p>
-          <p><b>Popust rane prijave:</b> {success.popustRanePrijave ? `${success.popustRanePrijave}%` : "/"}</p>
+          <p><b>Popust rane prijave:</b> {success.rezervacije[0]?.popustRanePrijave ?? "/"}%</p>
           <p><b>Ukupna cena:</b> {success.ukupnoDugovanje.toFixed(2)} RSD</p>
           <p className="mes">Sačuvajte token kako biste mogli da izmenite ili otkažete rezervaciju!</p>
         </div>
