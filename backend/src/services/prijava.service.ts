@@ -77,10 +77,10 @@ class PrijavaService {
 
     const daniUnique = Array.from(new Set(payload.dani));
     if (daniUnique.length !== payload.dani.length) {
-      throw this.httpError(400, "Ne možeš izabrati isti dan više puta.");
+      throw this.httpError(400, "Ne mozeš izabrati isti dan više puta.");
     }
     if (daniUnique.length > 2) {
-      throw this.httpError(400, "Možeš izabrati najviše 2 dana.");
+      throw this.httpError(400, "Mozes izabrati najviše 2 dana.");
     }
 
     let brojOsoba;

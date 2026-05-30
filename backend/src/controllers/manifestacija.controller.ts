@@ -15,7 +15,7 @@ class ManifestacijaController {
             const data = await manifestacijaService.getManifestacija(id);
 
             if (!data) {
-                res.status(404).json({ message: 'Manifestacija nije pronađena.' });
+                res.status(404).json({ message: 'Manifestacija nije pronadjena.' });
                 return;
             }
 
@@ -23,7 +23,7 @@ class ManifestacijaController {
 
         } catch (error) {
             console.error(error);
-            res.status(500).json({ message: 'Greška na serveru.' });
+            res.status(500).json({ message: 'Greska na serveru.' });
         }
     }
 }

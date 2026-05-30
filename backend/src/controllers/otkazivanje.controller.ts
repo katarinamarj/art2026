@@ -5,14 +5,16 @@ import type { OtkaziPrijavuRequest } from "../types/otkazivanje.types.js";
 class OtkazivanjeController {
   async otkaziPrijavu(req: Request, res: Response): Promise<void> {
     try {
-      const body = req.body as Partial<OtkaziPrijavuRequest>;
+      const body = req.body as OtkaziPrijavuRequest;
 
-      if (!body) {
-        res.status(400).json({ message: "Nedostaje body." });
+      if (!body || !body.email || !body.token) {
+        res.status(400).json({
+          message: "Email i token su obavezni."
+        });
         return;
       }
 
-      const result = await otkazivanjeService.otkaziPrijavu(body as OtkaziPrijavuRequest);
+      const result = await otkazivanjeService.otkaziPrijavu(body);
       res.status(200).json(result);
     } catch (err: any) {
       if (err?.status && err?.message) {
@@ -21,7 +23,7 @@ class OtkazivanjeController {
       }
 
       console.error(err);
-      res.status(500).json({ message: "Greška na serveru." });
+      res.status(500).json({ message: "Greska na serveru." });
     }
   }
 }

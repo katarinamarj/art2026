@@ -5,7 +5,7 @@ import { KreirajPrijavuRequest } from "../types/prijava.types.js";
 class PrijavaController {
   async kreirajPrijavu(req: Request, res: Response): Promise<void> {
     try {
-      const body = req.body as Partial<KreirajPrijavuRequest>;
+      const body = req.body as KreirajPrijavuRequest;
 
       if (!body) {
         res.status(400).json({ message: "Nedostaje body." });
@@ -21,7 +21,7 @@ class PrijavaController {
       }
 
       console.error(err);
-      res.status(500).json({ message: "Greška na serveru." });
+      res.status(500).json({ message: "Greska" });
     }
   }
 }
