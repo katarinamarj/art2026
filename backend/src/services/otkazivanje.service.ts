@@ -1,6 +1,6 @@
 import db from "../db/connection.js";
 import type { RowDataPacket, ResultSetHeader } from "mysql2/promise";
-import type { OtkaziPrijavuRequest, OtkaziPrijavuResponse} from "../types/otkazivanje.types.js";
+import type { OtkaziPrijavuRequest, OtkaziPrijavuResponse} from "../types/prijava.types.js";
 
 type PrijavaRow = RowDataPacket & {
   PrijavaID: number;

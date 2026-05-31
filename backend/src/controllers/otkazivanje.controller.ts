@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import otkazivanjeService from "../services/otkazivanje.service.js";
-import type { OtkaziPrijavuRequest } from "../types/otkazivanje.types.js";
+import type { OtkaziPrijavuRequest } from "../types/prijava.types.js";
 
 class OtkazivanjeController {
   async otkaziPrijavu(req: Request, res: Response): Promise<void> {
