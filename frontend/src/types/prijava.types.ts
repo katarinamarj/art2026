@@ -38,3 +38,18 @@ export interface KreirajPrijavuResponse {
   popustRanePrijave: number;
   rezervacije: RezervacijaResponse[];
 }
+
+export interface IzmeniPrijavuRequest {
+  email: string;
+  token: string;
+  dani: TipDana[];
+  brojOsoba: number;
+}
+
+export interface IzmeniPrijavuResponse {
+  prijavaId: number;
+  ukupnoDugovanje: number;
+  popustNaPaket: number;
+  popustNaGrupu: number;
+  popustPromoKod: number;
+}

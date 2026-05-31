@@ -62,8 +62,8 @@ export default function ManifestacijaPage() {
         &gt;&gt; Prijavi se
       </button>
       <div className="otkazivanje">
-        Ukoliko želite da otkažete rezervaciju, kliknite {" "}
-        <Link to="/otkazivanje">ovde</Link>.
+        Rezervaciju možete {" "}
+        <Link to="/otkazivanje">otkazati</Link> ili <Link to="/izmena">izmeniti</Link>.
       </div>
     </div>
   );

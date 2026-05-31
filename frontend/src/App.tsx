@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ManifestacijaPage from "./pages/ManifestacijaPage";
 import PrijavaPage from "./pages/PrijavaPage";
 import OtkazivanjePage from "./pages/OtkazivanjePage";
+import IzmenaPage from "./pages/IzmenaPage";
 
 export default function App() {
 
@@ -13,6 +14,7 @@ export default function App() {
         <Route path="/manifestacija/:id" element={<ManifestacijaPage />} />
         <Route path="/prijava/:id" element={<PrijavaPage />} />
         <Route path="/otkazivanje" element={<OtkazivanjePage/>} />
+        <Route path="/izmena" element={<IzmenaPage/>} />
 
         
       </Routes>
