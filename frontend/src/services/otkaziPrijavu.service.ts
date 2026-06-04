@@ -1,4 +1,5 @@
-import type { OtkaziPrijavuRequest, OtkaziPrijavuResponse } from "../models/otkaziPrijavu.model";
+import type { OtkaziPrijavuRequest, OtkaziPrijavuResponse } from "../types/prijava.types";
+
 
 export async function otkaziPrijavu(
   payload: OtkaziPrijavuRequest
